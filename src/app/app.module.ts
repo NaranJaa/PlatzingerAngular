@@ -8,6 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ConversationComponent } from './conversation/conversation.component';
 import {Routes, RouterModule} from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
+import { searchPipe } from './pipe/search';
+import {FormsModule} from '@angular/forms';
 
 const appRouters: Routes = [
   {path: '', component: HomeComponent},
@@ -24,11 +26,13 @@ const appRouters: Routes = [
     HomeComponent,
     ProfileComponent,
     ConversationComponent,
-    MenuComponent
+    MenuComponent,
+    searchPipe
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRouters)
+    RouterModule.forRoot(appRouters),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
